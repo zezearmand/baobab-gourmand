@@ -1,0 +1,81 @@
+/*
+Theme Name: Le Baobab Gourmand
+Theme URI: https://baobab-gourmand.example
+Author: Projet restaurant fictif
+Description: Thème WordPress sur mesure pour un restaurant sénégalais (Dakar) : accueil, carte (type de contenu « Plat »), blog culinaire, contact. Responsive.
+Version: 1.0.0
+Text Domain: baobab-gourmand
+License: GPL-2.0-or-later
+*/
+:root{--green:#1f3a2e;--green2:#2c5242;--cream:#faf6ef;--sand:#efe6d6;--gold:#b8893b;--terra:#b5532f;--text:#2b2b2b;--muted:#6b6b6b;--radius:14px;--shadow:0 10px 30px rgba(31,58,46,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Lato,system-ui,sans-serif;color:var(--text);background:var(--cream);line-height:1.7;font-size:17px}
+img{max-width:100%;height:auto;display:block}a{color:var(--green2)}
+h1,h2,h3,h4{font-family:"Playfair Display",Georgia,serif;color:var(--green);line-height:1.2;margin:0 0 .6em}
+h1{font-size:clamp(2.2rem,5vw,3.8rem)}h2{font-size:clamp(1.7rem,3.2vw,2.4rem)}h3{font-size:1.3rem}
+.wrap{width:min(1160px,92%);margin-inline:auto}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:#fff;padding:8px;z-index:100}
+.btn{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;padding:.85em 1.6em;border-radius:999px;font-weight:700;border:2px solid var(--gold);transition:.2s;cursor:pointer;font-size:1rem}
+.btn:hover{background:transparent;color:var(--gold)}.btn-sm{padding:.5em 1.2em}
+.btn-ghost{background:transparent;color:#fff;border-color:#fff}.btn-ghost:hover{background:#fff;color:var(--green)}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--sand)}
+.bar{display:flex;align-items:center;gap:1.5rem;min-height:72px}
+.brand{font-family:"Playfair Display",serif;font-weight:700;font-size:1.4rem;color:var(--green);text-decoration:none;margin-right:auto}
+.primary-nav .menu{list-style:none;display:flex;gap:1.6rem;margin:0;padding:0}
+.primary-nav a{text-decoration:none;color:var(--text);font-weight:700;padding:.3em 0;border-bottom:2px solid transparent}
+.primary-nav a:hover,.primary-nav .current-menu-item>a,.primary-nav .current-menu-ancestor>a{border-color:var(--gold)}
+.primary-nav li{position:relative}
+.primary-nav .sub-menu{list-style:none;margin:0;padding:.6rem 0;position:absolute;top:100%;left:-1rem;min-width:220px;background:#fff;border-radius:10px;box-shadow:var(--shadow);display:none}
+.primary-nav li:hover>.sub-menu,.primary-nav li:focus-within>.sub-menu{display:block}
+.primary-nav .sub-menu a{display:block;padding:.45rem 1.2rem;border:0}
+.nav-toggle{display:none;background:none;border:1px solid var(--green);color:var(--green);border-radius:8px;padding:.4em .9em;font-weight:700}
+/* hero */
+.hero{position:relative;min-height:82vh;display:flex;align-items:center;color:#fff;background:#1f3a2e center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,35,28,.85),rgba(20,35,28,.35))}
+.hero .wrap{position:relative}.hero h1{color:#fff;max-width:14ch}.hero p{max-width:46ch;font-size:1.2rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;color:var(--gold);font-weight:700}
+.hero .btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
+/* sections */
+.section{padding:5rem 0}.section.alt{background:var(--sand)}.section.dark{background:var(--green);color:#e9e4d8}.section.dark h2,.section.dark h3{color:#fff}
+.center{text-align:center}.lead{color:var(--muted);max-width:60ch;margin-inline:auto}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.split img{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
+.grid{display:grid;gap:1.8rem;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.card .body{padding:1.2rem 1.4rem 1.5rem}.card h3 a{text-decoration:none;color:inherit}
+.tag{display:inline-block;background:var(--sand);color:var(--terra);font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2em .7em;border-radius:999px}
+.price{font-family:"Playfair Display",serif;color:var(--terra);font-weight:700;font-size:1.2rem}
+.values{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:2.5rem}
+.values div{border-top:2px solid var(--gold);padding-top:1rem}
+/* page hero & content */
+.page-hero{background:var(--green);color:#fff;padding:3.5rem 0;text-align:center}.page-hero h1{color:#fff;margin:0}.page-hero p{margin:.5rem 0 0;color:#d9d3c3}
+.content{padding:3.5rem 0}.prose{max-width:760px;margin-inline:auto}.prose img{border-radius:var(--radius);margin:1.5rem 0}
+/* carte */
+.rubrique{margin-bottom:4rem}.rubrique>h2{text-align:center;position:relative}.rubrique>h2:after{content:"";display:block;width:60px;height:3px;background:var(--gold);margin:.6rem auto 0}
+.dish{display:grid;grid-template-columns:110px 1fr auto;gap:1.2rem;align-items:center;background:#fff;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);margin-bottom:1rem}
+.dish.noimg{grid-template-columns:1fr auto}.dish img{width:110px;height:110px;object-fit:cover;border-radius:10px}
+.dish h3{margin:0 0 .2em;font-size:1.15rem}.dish p{margin:0;color:var(--muted);font-size:.95rem}
+.menus .dish{border-left:4px solid var(--gold)}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem}
+.info-box{background:var(--green);color:#e9e4d8;border-radius:var(--radius);padding:2rem}.info-box h2,.info-box h3{color:#fff}.info-box a{color:#fff}
+.hours{list-style:none;padding:0;margin:0}.hours li{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(255,255,255,.15);padding:.4rem 0}
+.wpcf7 form label{display:block;font-weight:700;margin-bottom:1rem}
+.wpcf7 input[type=text],.wpcf7 input[type=email],.wpcf7 textarea{width:100%;padding:.8em 1em;border:1px solid #d6cfbf;border-radius:10px;font:inherit;background:#fff;margin-top:.3rem}
+.wpcf7 input:focus,.wpcf7 textarea:focus{outline:2px solid var(--gold)}
+.wpcf7 input[type=submit]{background:var(--gold);color:#fff;border:0;border-radius:999px;padding:.9em 2em;font-weight:700;cursor:pointer;font-size:1rem}
+.wpcf7-response-output{border-radius:10px!important}
+/* footer */
+.site-footer{background:#14241c;color:#cfc9b8;padding:3.5rem 0 1.5rem}.site-footer h3{color:#fff;font-size:1.1rem}.site-footer a{color:#cfc9b8}
+.fgrid{display:grid;gap:2.5rem;grid-template-columns:1.3fr 1fr 1fr}.site-footer ul{list-style:none;padding:0;margin:0}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:2.5rem;padding-top:1.2rem;font-size:.9rem;text-align:center}
+.meta{color:var(--muted);font-size:.9rem}.pagination{margin-top:2.5rem;text-align:center}.pagination .page-numbers{padding:.4em .9em;text-decoration:none}.pagination .current{background:var(--gold);color:#fff;border-radius:8px}
+/* responsive */
+@media(max-width:900px){.split,.contact-grid,.fgrid{grid-template-columns:1fr}.split img{aspect-ratio:16/10}.section{padding:3.5rem 0}
+.nav-toggle{display:block}.bar{flex-wrap:wrap}.primary-nav{display:none;width:100%;order:5;padding-bottom:1rem}.primary-nav.open{display:block}
+.primary-nav .menu{flex-direction:column;gap:.4rem}.primary-nav .sub-menu{position:static;display:block;box-shadow:none;background:transparent;padding-left:1rem}
+.dish{grid-template-columns:80px 1fr}.dish img{width:80px;height:80px}.dish .price{grid-column:2}.dish.noimg{grid-template-columns:1fr}.dish.noimg .price{grid-column:1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
